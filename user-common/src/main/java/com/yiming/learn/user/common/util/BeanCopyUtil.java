@@ -16,6 +16,9 @@ public class BeanCopyUtil {
         } catch (Exception e) {
             throw new IllegalArgumentException("没有默认构造方法", e);
         }
+        if (source == null) {
+            return temp;
+        }
         BeanUtils.copyProperties(source, temp);
         return temp;
     }

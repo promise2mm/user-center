@@ -1,6 +1,8 @@
 package com.yiming.learn.user.api.service;
 
 import com.yiming.learn.user.api.Response;
+import com.yiming.learn.user.api.po.UserPO;
+import com.yiming.learn.user.api.ro.PageRO;
 import com.yiming.learn.user.api.ro.UserRO;
 
 /**
@@ -18,4 +20,12 @@ public interface UserService {
      */
     Response<UserRO> getUserById(Long userId);
 
+    /**
+     * 分页获取用户信息
+     */
+    Response<PageRO<UserRO>> getUserPage(UserPO userPO);
+
+    Response<Long> add(UserPO userPO);
+
+    Response<Boolean> updateUser(UserPO userPO);
 }
