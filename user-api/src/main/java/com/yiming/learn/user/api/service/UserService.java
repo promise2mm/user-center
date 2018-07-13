@@ -28,4 +28,6 @@ public interface UserService {
     Response<Long> add(UserPO userPO);
 
     Response<Boolean> updateUser(UserPO userPO);
+
+    Response<Boolean> delete(Long userId);
 }

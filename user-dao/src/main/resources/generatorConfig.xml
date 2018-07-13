@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
   <classPathEntry
-    location="/Users/nishibin/.m2/repository//mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar"/>
+    location="/Users/nishibin/.m2/repository/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar"/>
   <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="hierarchical">
     <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；
        一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖
@@ -23,20 +23,20 @@
     <property name="endingDelimiter" value="`"/>
 
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-      connectionURL="jdbc:mysql://35.240.248.57:3306/db_user" userId="dev" password="123456">
+      connectionURL="jdbc:mysql://35.240.248.57:3306/db_user?autoReconnect=true&amp;useSSL=false&amp;nullNamePatternMatchesAll=true" userId="dev" password="123456">
     </jdbcConnection>
 
     <javaModelGenerator targetPackage="com.yiming.learn.user.dao.dto"
-      targetProject="/Users/nishibin/dev/yiming/projects/user-center/dao/src/main/java"/>
+      targetProject="/Users/nishibin/dev/yiming/projects/user-center/user-dao/src/main/java"/>
 
     <sqlMapGenerator targetPackage="mapper"
-      targetProject="/Users/nishibin/dev/yiming/projects/user-center/dao/src/main/resources"/>
+      targetProject="/Users/nishibin/dev/yiming/projects/user-center/user-dao/src/main/resources"/>
 
     <javaClientGenerator targetPackage="com.yiming.learn.user.dao.mapper"
-      targetProject="/Users/nishibin/dev/yiming/projects/user-center/dao/src/main/java"
+      targetProject="/Users/nishibin/dev/yiming/projects/user-center/user-dao/src/main/java"
       type="XMLMAPPER"/>
 
-    <table tableName="%">
+    <table schema="db_user" tableName="%">
       <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
     </table>
   </context>

@@ -7,4 +7,18 @@ package com.yiming.learn.user.common.util;
  */
 public class StrUtil {
 
+    public static Boolean isEmpty(String s) {
+        if (s == null) {
+            return Boolean.TRUE;
+        }
+        if ("".equals(s)) {
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
+    }
+
+    public static Boolean isNotEmpty(String s) {
+        return !isEmpty(s);
+    }
+
 }

@@ -14,7 +14,11 @@ public class UserPO extends PagePO {
 
     private Long id;
 
+    private String account;
+
     private String name;
+
+    private String nickName;
 
     private String phone;
 

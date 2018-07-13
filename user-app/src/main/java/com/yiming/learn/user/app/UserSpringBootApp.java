@@ -12,8 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @author yiming
  */
 
-//@MapperScan(basePackages = "com.yiming.learn.user.dao.mapper")
-@tk.mybatis.spring.annotation.MapperScan(basePackages = "com.yiming.learn.user.dao.mapper")
+@MapperScan(basePackages = "com.yiming.learn.user.dao.mapper")
 @ComponentScan(basePackages = {"com.yiming.learn.user"})
 @EnableTransactionManagement
 @SpringBootApplication

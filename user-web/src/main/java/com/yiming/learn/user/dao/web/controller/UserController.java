@@ -5,6 +5,7 @@ import com.yiming.learn.user.api.po.UserPO;
 import com.yiming.learn.user.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,8 +42,13 @@ public class UserController extends BaseController {
 
 
     @PostMapping(value = "update", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Response updateUser(UserPO userPO) {
+    public Response updateUser(@RequestBody UserPO userPO) {
         return userService.updateUser(userPO);
+    }
+
+    @DeleteMapping(value = "delete/{userId}")
+    public Response<Boolean> delete(@PathVariable Long userId) {
+        return userService.delete(userId);
     }
 
 }

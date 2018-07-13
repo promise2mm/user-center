@@ -11,14 +11,6 @@ mybatis:
   type-aliases-package: 'com.yiming.learn.user.dao.dto'
   mapper-locations: 'classpath*:/mapper/*Mapper.xml'
 
-
-#mapper
-mapper:
-    mappers:
-        - com.yiming.learn.user.dao.MyMapper
-    not-empty: false
-    identity: MYSQL
-
 #pagehelper
 pagehelper:
     helperDialect: mysql
